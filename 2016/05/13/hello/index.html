@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>hello | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="# android与后台数据交互（后台基于java）版权所有，转载请注明出处，翻版必究。
+
+交互起android与后台的数据交互与web前后端数据十分相似。主要体现如下：（1）基本步骤是：开启服务器–&amp;gt;开启服务器–&amp;gt;开启前端；（2）基本数据流是：前台发给后台的URL格式为：服务器地址/参数=参数值—&amp;gt;后台接收数据后，与数据库交互，处理后返回结果–&amp;gt;前端根据返回结果值进行相">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hello">
+<meta property="og:url" content="http://yoursite.com/2016/05/13/hello/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="# android与后台数据交互（后台基于java）版权所有，转载请注明出处，翻版必究。
+
+交互起android与后台的数据交互与web前后端数据十分相似。主要体现如下：（1）基本步骤是：开启服务器–&amp;gt;开启服务器–&amp;gt;开启前端；（2）基本数据流是：前台发给后台的URL格式为：服务器地址/参数=参数值—&amp;gt;后台接收数据后，与数据库交互，处理后返回结果–&amp;gt;前端根据返回结果值进行相">
+<meta property="og:updated_time" content="2016-05-12T16:10:49.317Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="hello">
+<meta name="twitter:description" content="# android与后台数据交互（后台基于java）版权所有，转载请注明出处，翻版必究。
+
+交互起android与后台的数据交互与web前后端数据十分相似。主要体现如下：（1）基本步骤是：开启服务器–&amp;gt;开启服务器–&amp;gt;开启前端；（2）基本数据流是：前台发给后台的URL格式为：服务器地址/参数=参数值—&amp;gt;后台接收数据后，与数据库交互，处理后返回结果–&amp;gt;前端根据返回结果值进行相">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-hello" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/13/hello/" class="article-date">
+  <time datetime="2016-05-12T16:08:48.000Z" itemprop="datePublished">2016-05-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      hello
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="android与后台数据交互（后台基于java）"><a href="#android与后台数据交互（后台基于java）" class="headerlink" title="﻿# android与后台数据交互（后台基于java）"></a>﻿# android与后台数据交互（后台基于java）</h2><p>版权所有，转载请注明出处，翻版必究。</p>
+<blockquote>
+<p>交互起android与后台的数据交互与web前后端数据十分相似。<br>主要体现如下：<br>（1）基本步骤是：开启服务器–&gt;开启服务器–&gt;开启前端；<br>（2）基本数据流是：前台发给后台的URL格式为：服务器地址/参数=参数值—&gt;后台接收数据后，与数据库交互，处理后返回结果–&gt;前端根据返回结果值进行相应处理;</p>
+<p>最大的不同如下：<br>（1）数据流传输的格式是使用接送数据；<br>（2）必须得封装这个数据流，<br>前端封装成的类是：HelpClient；<br>后台封装成的类是：Controller;</p>
+</blockquote>
+<p>具体步骤如下：<br>（1）前端：HttpUtil网络传输封装json类（完全不改动）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">//调用到org.json.jar</span><br><span class="line">public class HttpUtil &#123;</span><br><span class="line">	public static String getHttpJSON(String url) &#123;</span><br><span class="line"></span><br><span class="line">		HttpGet httpRequest = new HttpGet(url);</span><br><span class="line">		try &#123;</span><br><span class="line">			HttpClient httpclient = new DefaultHttpClient();</span><br><span class="line">			HttpResponse httpResponse = httpclient.execute(httpRequest);</span><br><span class="line"></span><br><span class="line">			if (httpResponse.getStatusLine().getStatusCode() == HttpStatus.SC_OK) &#123;</span><br><span class="line">				HttpEntity httpEntity=httpResponse.getEntity();</span><br><span class="line">				Log.e(&quot;HTTPENTITY&quot;, httpEntity.toString());</span><br><span class="line">				String jsonStr = EntityUtils.toString(httpEntity,</span><br><span class="line">						&quot;UTF-8&quot;);</span><br><span class="line">				Log.e(&quot;JSONSTR&quot;, jsonStr);</span><br><span class="line">				return jsonStr;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125; catch (Exception e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">		return null;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public static int getHttpStatus() &#123;</span><br><span class="line">		int status = 0;</span><br><span class="line">		HttpGet httpRequest = new HttpGet(</span><br><span class="line">				&quot;http://192.168.0.214/vote/AndroidConnServlet&quot;);</span><br><span class="line">				</span><br><span class="line">		try &#123;</span><br><span class="line">			HttpParams httpParameters = new BasicHttpParams();</span><br><span class="line">			HttpConnectionParams.setConnectionTimeout(httpParameters, 5000);</span><br><span class="line">			HttpConnectionParams.setSoTimeout(httpParameters, 5000);</span><br><span class="line">			HttpConnectionParams.setTcpNoDelay(httpParameters, true);</span><br><span class="line"></span><br><span class="line">			HttpClient httpclient = new DefaultHttpClient(httpParameters);</span><br><span class="line">			HttpResponse httpResponse = httpclient.execute(httpRequest);</span><br><span class="line"></span><br><span class="line">			status = httpResponse.getStatusLine().getStatusCode();</span><br><span class="line">		&#125; catch (Exception e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">		return status;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>（2）前端：封装成HelpClient类（只需根据实际情况改动BASE_URL）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">package com.example.util;</span><br><span class="line"></span><br><span class="line">import com.loopj.android.http.*;</span><br><span class="line"></span><br><span class="line">public class HelpClient &#123;</span><br><span class="line">//该地址即为前端往后台发送的地址：http://服务器端ip地址/服务端工程名/</span><br><span class="line">	private static final String BASE_URL = &quot;http://10.140.24.211:8080/Help_SV1/&quot;;</span><br><span class="line">	private static AsyncHttpClient client = new AsyncHttpClient();</span><br><span class="line"></span><br><span class="line">	public static void get(String url, RequestParams params,</span><br><span class="line">			AsyncHttpResponseHandler responseHandler) &#123;</span><br><span class="line">		client.get(getAbsoluteUrl(url), params, responseHandler);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public static void post(String url, RequestParams params,</span><br><span class="line">			AsyncHttpResponseHandler responseHandler) &#123;</span><br><span class="line">		client.post(getAbsoluteUrl(url), params, responseHandler);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	private static String getAbsoluteUrl(String relativeUrl) &#123;</span><br><span class="line">		return BASE_URL + relativeUrl;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>（3）在android端：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line">public class MainActivity extends Activity &#123;</span><br><span class="line"></span><br><span class="line">	private EditText name;</span><br><span class="line">	private EditText pw;</span><br><span class="line"></span><br><span class="line">	@Override</span><br><span class="line">	protected void onCreate(Bundle savedInstanceState) &#123;</span><br><span class="line">		super.onCreate(savedInstanceState);</span><br><span class="line">		setContentView(R.layout.activity_main);</span><br><span class="line">		// solve network</span><br><span class="line">		/*</span><br><span class="line">		 * StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder()</span><br><span class="line">		 * .detectDiskReads().detectDiskWrites().detectNetwork()</span><br><span class="line">		 * .penaltyLog().build()); StrictMode.setVmPolicy(new</span><br><span class="line">		 * StrictMode.VmPolicy.Builder()</span><br><span class="line">		 * .detectLeakedSqlLiteObjects().detectLeakedClosableObjects()</span><br><span class="line">		 * .penaltyLog().penaltyDeath().build());</span><br><span class="line">		 */</span><br><span class="line">		/* getActionBar().hide(); */</span><br><span class="line">		name = (EditText) findViewById(R.id.editText1);</span><br><span class="line">		pw = (EditText) findViewById(R.id.editText2);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">public void onLogInClick(View v) &#123;</span><br><span class="line">	final String username = name.getText().toString();</span><br><span class="line">	final String password = pw.getText().toString();</span><br><span class="line">	//Controller是后台继承于HttpServlet的类</span><br><span class="line">	String URL = &quot;Controller&quot;;</span><br><span class="line">	//按照对既定参数进行赋值来实现数据传输</span><br><span class="line">	String getUrl = URL + &quot;?ACTION=&quot;+ &quot;LOGIN&quot; + &quot;&amp;&quot; + &quot;NAME=&quot; + username + &quot;&amp;&quot; + &quot;PASS=&quot; + password;</span><br><span class="line">	//</span><br><span class="line">	HelpClient.get(getUrl, null, new TextHttpResponseHandler() &#123;</span><br><span class="line">	//</span><br><span class="line">		@Override</span><br><span class="line">		public void onFailure(int statusCode, Header[] headers,</span><br><span class="line">				String responseBody, Throwable e) &#123;</span><br><span class="line">			// TODO Auto-generated method stub</span><br><span class="line">			Toast.makeText(getApplicationContext(), &quot;NetWork is not good&quot;,</span><br><span class="line">					Toast.LENGTH_SHORT).show();</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		@Override</span><br><span class="line">		public void onSuccess(int statusCode, Header[] headers,</span><br><span class="line">				String responseBody) &#123;</span><br><span class="line">			// TODO Auto-generated method stub</span><br><span class="line">			if (responseBody.equals(&quot;success&quot;)) &#123;</span><br><span class="line">				Toast.makeText(getApplicationContext(), responseBody,</span><br><span class="line">						Toast.LENGTH_SHORT).show();</span><br><span class="line">				Intent intent = new Intent();</span><br><span class="line">				intent.setClass(MainActivity.this,</span><br><span class="line">						HelpMessageActivity.class);</span><br><span class="line">				intent.putExtra(&quot;userid&quot;, username);</span><br><span class="line">				intent.putExtra(&quot;pwd&quot;, password);</span><br><span class="line"></span><br><span class="line">				startActivity(intent);</span><br><span class="line">			&#125; else &#123;</span><br><span class="line">				Toast.makeText(getApplicationContext(), &quot;login failed&quot;,</span><br><span class="line">						Toast.LENGTH_SHORT).show();</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>（4）后台：继承于HttpServlet的网络数据传输类<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">public class Controller extends HttpServlet &#123;</span><br><span class="line">	private static final long serialVersionUID = 1L;</span><br><span class="line"></span><br><span class="line">	/**</span><br><span class="line">	 * @see HttpServlet#HttpServlet()</span><br><span class="line">	 */</span><br><span class="line">	public Controller() &#123;</span><br><span class="line">		super();</span><br><span class="line">		// TODO Auto-generated constructor stub</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	/**</span><br><span class="line">	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse</span><br><span class="line">	 *      response)</span><br><span class="line">	 */</span><br><span class="line">	protected void doGet(HttpServletRequest request,</span><br><span class="line">			HttpServletResponse response) throws ServletException, IOException &#123;</span><br><span class="line">		// TODO Auto-generated method stub</span><br><span class="line">		//ACTION，NAME,PASS均是参数名称，获取的参数值是由前端传过来</span><br><span class="line">		String action = request.getParameter(&quot;ACTION&quot;);</span><br><span class="line">		if (action.equals(&quot;LOGIN&quot;)) &#123;</span><br><span class="line">			LoginDao loginDao = new LoginDao();</span><br><span class="line">			loginDao.init();</span><br><span class="line">			String userName = request.getParameter(&quot;NAME&quot;);</span><br><span class="line">			String passWord = request.getParameter(&quot;PASS&quot;);</span><br><span class="line"></span><br><span class="line">			PrintWriter out = response.getWriter();</span><br><span class="line">			//返回success与fail在loginDao方法中得写明，另外这两个参数是前端进行处理的关键</span><br><span class="line">			if (loginDao.query(userName, passWord)) &#123;</span><br><span class="line">			</span><br><span class="line">				out.print(&quot;success&quot;);</span><br><span class="line">			&#125; else &#123;</span><br><span class="line">				out.print(&quot;fail&quot;);</span><br><span class="line">			&#125;</span><br><span class="line">			out.flush();</span><br><span class="line">			out.close();</span><br><span class="line">		&#125;</span><br><span class="line">		if (action.equals(&quot;SUB&quot;)) &#123;</span><br><span class="line">   ****</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	/**</span><br><span class="line">	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse</span><br><span class="line">	 *      response)</span><br><span class="line">	 */</span><br><span class="line">	protected void doPost(HttpServletRequest request,</span><br><span class="line">			HttpServletResponse response) throws ServletException, IOException &#123;</span><br><span class="line">		// TODO Auto-generated method stub</span><br><span class="line">		this.doGet(request, response);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>（5）其他相关问题说明：<br>1、后台服务器编程环境（IDE）的选择<br>通用选择是JavaEE，或者MyEclipse。具体新建服务器项目看网上教学。<br>2、测试环境<br>本地环境测试时，会运行三款软件：数据库，后台服务器，前端服务器。<br>3、小技巧与注意事项：<br>本地测试时<br>（1）可以在命令行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">使用其中的“当前的IPV4地址”作为前端的BASE_URL中的ip地址；</span><br><span class="line">（2）可以使用</span><br><span class="line">```http://192.168.1.114:8080/Help_SV1//Controller?ACTION=LOGIN&amp;NAME=2&amp;PASS=1</span><br></pre></td></tr></table></figure></p>
+<p>类似这样的地址直接在浏览器中输入，而不用每回打开android虚拟机或者实体机来测试数据在前后端之间的交互结果是否正确。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/05/13/hello/" data-id="cio4i3jfy0001qljxp19cnmz5" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/05/12/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Hello World</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/05/13/hello/">hello</a>
+          </li>
+        
+          <li>
+            <a href="/2016/05/12/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
