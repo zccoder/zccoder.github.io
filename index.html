@@ -64,6 +64,69 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-hexoUsing" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/30/hexoUsing/" class="article-date">
+  <time datetime="2016-05-30T10:23:27.000Z" itemprop="datePublished">2016-05-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/30/hexoUsing/">hexoUsing</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="ubuntu平台下，使用hexo搭建github博客"><a href="#ubuntu平台下，使用hexo搭建github博客" class="headerlink" title="ubuntu平台下，使用hexo搭建github博客"></a>ubuntu平台下，使用hexo搭建github博客</h1><h2 id="基本步骤"><a href="#基本步骤" class="headerlink" title="基本步骤"></a>基本步骤</h2><h3 id="写博文前的准备工作"><a href="#写博文前的准备工作" class="headerlink" title="写博文前的准备工作"></a>写博文前的准备工作</h3><blockquote>
+<ul>
+<li>安装nodejs,hexo;</li>
+<li>启动hexo服务器;</li>
+<li>hexo总结</li>
+</ul>
+</blockquote>
+<p>（１）按照官网上的方法：<a href="http://www.runoob.com/nodejs/nodejs-install-setup.html" target="_blank" rel="external">Ubuntu下安装nodejs</a></p>
+<p>（２）通过npm安装：hexo<code>sudo npm install hexo -g</code><br>注：-g是指全局安装hexo<br>（３）初始化一个blog 并且启动服务器：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo init blog</span><br><span class="line">cd blog</span><br><span class="line">npm install</span><br><span class="line">hexo server//启动服务器</span><br></pre></td></tr></table></figure></p>
+<p>此时文件目录为</p>
+<pre><code>blog
+    _config_yml // 注配置文件
+    db.json // 数据
+    debug.log // 调试日志
+    _node_mudules // nodejs 相关依赖
+    package.json // 配置依赖
+    scaffolds // 脚手架 - 也就是一个工具模板
+    source // 存放blog正文的地方
+    themes // 存放皮肤的地方
+</code></pre><p>默认访问 <a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a></p>
+<h2 id="写博文"><a href="#写博文" class="headerlink" title="写博文"></a>写博文</h2><p>（１）新建文章(在blog文件夹下)<br>新建一篇主题为hello的blog：<code>hexo new hello</code><br>（２）编辑 hello.md 就是编辑你的blog内容（hexo会在 source/_posts/ 下新建hello.md 文件）<br>（３）静态处理：因为我们的blog要部署到github静态服务器上面，所有我们还要将页面进行静态化<code>hexo g</code>（blog根目录下会生成public文件夹）<br>（４）修改blog目录下的 _config.yml 文件,打开 _config.yml 找到如下配置<br><code>deploy:
+     type: git
+     repo:https://github.com/leopardpan/leopardpan.github.io.git</code><br>注：hexo3.0以后的这里可能会报<br><figure class="highlight plain"><figcaption><span>Deployer not found: git```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">这时这样解决:运行</span><br><span class="line">```npm install hexo-deployer-git--save```,</span><br><span class="line">之后在```hexo g``` ```hexo d```;</span><br><span class="line">打开你的github网址，也就是http://×××.github.io/,即可以看到效果。</span><br><span class="line">（５）任意的事情</span><br><span class="line">主站设置：打开 _config.yml,修改配置</span><br></pre></td></tr></table></figure></p>
+<p>title: zccoder<br>subtitle: 专注于Android、Java、移动互联网、项目管理、软件架构<br>description:<br>author: zccoder<br>language: zh-CN<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">## hexo总结</span><br><span class="line">（１）一般命令</span><br></pre></td></tr></table></figure></p>
+<p>hexo new”postName” #新建文章<br>hexo new page”pageName” #新建页面<br>hexo generate #生成静态页面至public目录<br>hexo server #开启预览访问端口（默认端口4000，’ctrl + c’关闭server）<br>hexo deploy #将.deploy目录部署到GitHub<br>hexo help # 查看帮助<br>hexo version #查看Hexo的版本<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">（２）总结，每次部署的步骤，可按以下三步来进行。</span><br></pre></td></tr></table></figure></p>
+<p>hexo clean<br>hexo generate<br>hexo deploy<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">（３）复合命令</span><br></pre></td></tr></table></figure></p>
+<p>hexo deploy -g  #生成加部署<br>hexo server -g  #生成加预览<br>命令的简写为：<br>hexo n == hexo new<br>hexo g == hexo generate<br>hexo s == hexo server<br>hexo d == hexo deploy<br>```</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/05/30/hexoUsing/" data-id="ciotvcl7l0001bsjxrdestskn" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-hello" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/05/13/hello/" class="article-date">
@@ -101,7 +164,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/13/hello/" data-id="cio4i3jfy0001qljxp19cnmz5" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/13/hello/" data-id="ciotvcl7o0002bsjxlrt6ai7a" class="article-share-link">Share</a>
       
       
     </footer>
@@ -146,7 +209,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/12/hello-world/" data-id="cio4i3jfp0000qljx2zq318u9" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/12/hello-world/" data-id="ciotvcl7c0000bsjxdpbrmnlt" class="article-share-link">Share</a>
       
       
     </footer>
@@ -184,6 +247,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2016/05/30/hexoUsing/">hexoUsing</a>
+          </li>
         
           <li>
             <a href="/2016/05/13/hello/">hello</a>
