@@ -1,91 +1,91 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
-  <title>java多线程 | Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一、线程的创建与启动1.继承Thread类创建线程类1234567891011121314151617181920public class FirstThread extends Thread &amp;#123;	private int i;	public void run()&amp;#123;		for(;i&amp;lt;100;i++)&amp;#123;			System.out.println(getName()+">
-<meta property="og:type" content="article">
-<meta property="og:title" content="java多线程">
-<meta property="og:url" content="http://yoursite.com/2016/09/02/javaThread/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="一、线程的创建与启动1.继承Thread类创建线程类1234567891011121314151617181920public class FirstThread extends Thread &amp;#123;	private int i;	public void run()&amp;#123;		for(;i&amp;lt;100;i++)&amp;#123;			System.out.println(getName()+">
-<meta property="og:updated_time" content="2016-09-02T14:17:19.494Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="java多线程">
-<meta name="twitter:description" content="一、线程的创建与启动1.继承Thread类创建线程类1234567891011121314151617181920public class FirstThread extends Thread &amp;#123;	private int i;	public void run()&amp;#123;		for(;i&amp;lt;100;i++)&amp;#123;			System.out.println(getName()+">
-  
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  <link rel="stylesheet" href="/css/style.css">
-  
 
+ <!DOCTYPE HTML>
+<html >
+<head>
+  <meta charset="UTF-8">
+  
+    <title>java多线程 | Hexo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
+    
+    <meta name="author" content="John Doe">
+    
+    <meta name="description" content="一、线程的创建与启动1.继承Thread类创建线程类1234567891011121314151617181920public class FirstThread extends Thread &amp;#123;	private int i;	public void run()&amp;#123;		for(;i">
+    
+    
+    
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/pacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/pacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
-      </div>
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main"><article id="post-javaThread" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/09/02/javaThread/" class="article-date">
-  <time datetime="2016-09-02T14:12:18.000Z" itemprop="datePublished">2016-09-02</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      java多线程
-    </h1>
-  
+  <body>
+    <header>
+      <div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.svg" alt="Hexo" title="Hexo"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="Hexo">Hexo</a></h1>
+				<h2 class="blog-motto"></h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+					<li>
+					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="text" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
+						<input type="hidden" name="q" value="site:yoursite.com">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
 
-      </header>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="一、线程的创建与启动"><a href="#一、线程的创建与启动" class="headerlink" title="一、线程的创建与启动"></a>一、线程的创建与启动</h2><h3 id="1-继承Thread类创建线程类"><a href="#1-继承Thread类创建线程类" class="headerlink" title="1.继承Thread类创建线程类"></a>1.继承Thread类创建线程类</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">public class FirstThread extends Thread &#123;</span><br><span class="line"></span><br><span class="line">	private int i;</span><br><span class="line">	public void run()&#123;</span><br><span class="line">		for(;i&lt;100;i++)&#123;</span><br><span class="line">			System.out.println(getName()+&quot; &quot; +i);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		// TODO Auto-generated method stub</span><br><span class="line">       for(int i=0;i&lt;100;i++)&#123;</span><br><span class="line">    	   System.out.println(Thread.currentThread().getName()+&quot; &quot;+i);</span><br><span class="line">    	   if(i==20)&#123;</span><br><span class="line">    		   new FirstThread().start();</span><br><span class="line">    		   new FirstThread().start();</span><br><span class="line">    	   &#125;</span><br><span class="line">       &#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      <a href="/2016/09/02/javaThread/" title="java多线程" itemprop="url">java多线程</a>
+  </h1>
+  <p class="article-author">By
+    
+      <a href="http://yoursite.com" title="John Doe">John Doe</a>
+    </p>
+  <p class="article-time">
+    <time datetime="2016-09-02T14:12:18.000Z" itemprop="datePublished">2016-09-02</time>
+    Updated:<time datetime="2016-09-02T14:17:19.494Z" itemprop="dateModified">2016-09-02</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">Contents</strong>
+		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、线程的创建与启动"><span class="toc-number">1.</span> <span class="toc-text">一、线程的创建与启动</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-继承Thread类创建线程类"><span class="toc-number">1.1.</span> <span class="toc-text">1.继承Thread类创建线程类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-实现Runnable接口创建线程类"><span class="toc-number">1.2.</span> <span class="toc-text">2.实现Runnable接口创建线程类</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、使用Callable和Future创建线程"><span class="toc-number">2.</span> <span class="toc-text">二、使用Callable和Future创建线程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、线程的生命周期"><span class="toc-number">3.</span> <span class="toc-text">三、线程的生命周期</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四、控制进程"><span class="toc-number">4.</span> <span class="toc-text">四、控制进程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#五、线程同步"><span class="toc-number">5.</span> <span class="toc-text">五、线程同步</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#六、进程通信"><span class="toc-number">6.</span> <span class="toc-text">六、进程通信</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#七、其他"><span class="toc-number">7.</span> <span class="toc-text">七、其他</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#八、-最后，总结："><span class="toc-number">8.</span> <span class="toc-text">八、 最后，总结：</span></a></li></ol>
+		</div>
+		
+		<h2 id="一、线程的创建与启动"><a href="#一、线程的创建与启动" class="headerlink" title="一、线程的创建与启动"></a>一、线程的创建与启动</h2><h3 id="1-继承Thread类创建线程类"><a href="#1-继承Thread类创建线程类" class="headerlink" title="1.继承Thread类创建线程类"></a>1.继承Thread类创建线程类</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">public class FirstThread extends Thread &#123;</span><br><span class="line"></span><br><span class="line">	private int i;</span><br><span class="line">	public void run()&#123;</span><br><span class="line">		for(;i&lt;100;i++)&#123;</span><br><span class="line">			System.out.println(getName()+&quot; &quot; +i);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		// TODO Auto-generated method stub</span><br><span class="line">       for(int i=0;i&lt;100;i++)&#123;</span><br><span class="line">    	   System.out.println(Thread.currentThread().getName()+&quot; &quot;+i);</span><br><span class="line">    	   if(i==20)&#123;</span><br><span class="line">    		   new FirstThread().start();</span><br><span class="line">    		   new FirstThread().start();</span><br><span class="line">    	   &#125;</span><br><span class="line">       &#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="2-实现Runnable接口创建线程类"><a href="#2-实现Runnable接口创建线程类" class="headerlink" title="2.实现Runnable接口创建线程类"></a>2.实现Runnable接口创建线程类</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">public class SecondThread implements Runnable &#123;</span><br><span class="line"></span><br><span class="line">	private int i;</span><br><span class="line">	@Override</span><br><span class="line">	public void run() &#123;</span><br><span class="line">		for(;i&lt;100;i++)</span><br><span class="line">		// TODO Auto-generated method stub</span><br><span class="line">       System.out.println(Thread.currentThread().getName() + &quot; &quot; +i);</span><br><span class="line">	&#125;</span><br><span class="line">	public static void main(String[] args)&#123;</span><br><span class="line">		for(int i=0;i&lt;100;i++)&#123;</span><br><span class="line">			System.out.println(Thread.currentThread().getName() + &quot; &quot; +i);</span><br><span class="line">			if(i==20)&#123;</span><br><span class="line">				SecondThread st = new SecondThread();</span><br><span class="line">				new Thread(st,&quot;新线程1&quot;).start();</span><br><span class="line">				new Thread(st,&quot;新线程2&quot;).start();</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>注明：未必i==20线程就马上运行，或许是i=22时，因为线程还有个就绪状态。</p>
 <h2 id="二、使用Callable和Future创建线程"><a href="#二、使用Callable和Future创建线程" class="headerlink" title="二、使用Callable和Future创建线程"></a>二、使用Callable和Future创建线程</h2><p>call方法可以有返回值和抛出异常；<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">import java.util.concurrent.Callable;</span><br><span class="line">import java.util.concurrent.FutureTask;</span><br><span class="line"></span><br><span class="line">public class ThirdThread implements Callable&lt;Integer&gt; &#123;</span><br><span class="line"></span><br><span class="line">	@Override</span><br><span class="line">	public Integer call() throws Exception &#123;</span><br><span class="line">		// TODO Auto-generated method stub</span><br><span class="line">		int i=0;</span><br><span class="line">		for(;i&lt;100;i++)&#123;</span><br><span class="line">			System.out.println(Thread.currentThread().getName() + &quot; &quot; + i);</span><br><span class="line">		&#125;</span><br><span class="line">		return i;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	public static void main(String[] args)&#123;</span><br><span class="line">		ThirdThread st = new ThirdThread();</span><br><span class="line">		FutureTask&lt;Integer&gt; task = new FutureTask&lt;Integer&gt;(st);</span><br><span class="line">		for(int i=0;i&lt;100;i++)&#123;</span><br><span class="line">			System.out.println(Thread.currentThread().getName() + &quot; &quot; + i);</span><br><span class="line">			if(i==20)&#123;</span><br><span class="line">				new Thread(task,&quot;有返回值的线程&quot;).start();</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		try&#123;</span><br><span class="line">			System.out.println(&quot;子线程的返回值：&quot; + task.get());</span><br><span class="line">		&#125;catch(Exception e)&#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
@@ -114,106 +114,194 @@
 <li>线程生命周期有四种类型；</li>
 <li>线程控制与线程通信有联系，二者均可以使用synchronized和ReentrantLock两种方式，线程通信注意flag标记以及相应的线程信息，比如wait（），notifyAll（）等。</li>
 </ul>
+  
+	</div>
+		<footer class="article-footer clearfix">
 
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/09/02/javaThread/" data-id="cisluoyle0002thjxwp1gbd06" class="article-share-link">Share</a>
-      
-      
-    </footer>
+
+
+
+<div class="article-share" id="share">
+
+  <div data-url="http://yoursite.com/2016/09/02/javaThread/" data-title="java多线程 | Hexo" data-tsina="null" class="share clearfix">
   </div>
-  
-    
-<nav id="article-nav">
-  
-  
-    <a href="/2016/05/30/hexoUsing/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">ubuntu平台下，使用hexo搭建github博客</div>
-    </a>
-  
+
+</div>
+</footer>   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+
+<div class="next">
+<a href="/2016/05/30/hexoUsing/"  title="ubuntu平台下，使用hexo搭建github博客">
+ <strong>NEXT:</strong><br/> 
+ <span>ubuntu平台下，使用hexo搭建github博客
+</span>
+</a>
+</div>
+
 </nav>
 
-  
-</article>
+	
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
 
-</section>
-        
-          <aside id="sidebar">
-  
-    
-
-  
-    
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li></ul>
-    </div>
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">Contents</strong>
+  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、线程的创建与启动"><span class="toc-number">1.</span> <span class="toc-text">一、线程的创建与启动</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-继承Thread类创建线程类"><span class="toc-number">1.1.</span> <span class="toc-text">1.继承Thread类创建线程类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-实现Runnable接口创建线程类"><span class="toc-number">1.2.</span> <span class="toc-text">2.实现Runnable接口创建线程类</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、使用Callable和Future创建线程"><span class="toc-number">2.</span> <span class="toc-text">二、使用Callable和Future创建线程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、线程的生命周期"><span class="toc-number">3.</span> <span class="toc-text">三、线程的生命周期</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四、控制进程"><span class="toc-number">4.</span> <span class="toc-text">四、控制进程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#五、线程同步"><span class="toc-number">5.</span> <span class="toc-text">五、线程同步</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#六、进程通信"><span class="toc-number">6.</span> <span class="toc-text">六、进程通信</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#七、其他"><span class="toc-number">7.</span> <span class="toc-text">七、其他</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#八、-最后，总结："><span class="toc-number">8.</span> <span class="toc-text">八、 最后，总结：</span></a></li></ol>
   </div>
 
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
+<aside class="clearfix">
 
   
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2016/09/02/javaThread/">java多线程</a>
-          </li>
-        
-          <li>
-            <a href="/2016/05/30/hexoUsing/">ubuntu平台下，使用hexo搭建github博客</a>
-          </li>
-        
-          <li>
-            <a href="/2016/05/13/hello/">android与后台数据交互（后台基于java）</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
 
   
+
+  <div class="rsspart">
+	<a href="null" target="_blank" title="rss">RSS</a>
+</div>
+
 </aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2016 John Doe<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+</div>
     </div>
-  </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<div class="social-font clearfix">
+		
+		
+		
+		
+		
+	</div>
+		<p class="copyright">Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/A-limon/pacman" target="_blank" title="Pacman">Pacman</a> © 2016 
+		
+		<a href="http://yoursite.com" target="_blank" title="John Doe">John Doe</a>
+		
+		</p>
+</div>
 </footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
+    <script src="/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else
+    {
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+});
+</script>
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      h  = $('article h2')
+      ah = $('article h2'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  if(ah.length==0){
+    t.css('display','none');
+  }else{
+    c.click(function(){
+      ta.css('display', 'block').addClass('fadeIn');
+    });
+    o.click(function(){
+      ta.css('display', 'none');
+    });
+    $(window).scroll(function(){
+      ta.css("top",Math.max(140,320-$(this).scrollTop()));
+    });
+  };
+});
+</script>
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina');
+  var html = [
+  '<a href="#" class="overlay" id="qrcode"></a>',
+  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#share"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
+  '<a href="#textlogo" class="article-back-to-top" title="Top"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="QRcode"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="Weibo"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+  $('.article-share-qrcode').click(function(){
+    var imgSrc = $('#qrcode-pic').attr('data-src');
+    $('#qrcode-pic').attr('src', imgSrc);
+    $('#qrcode-pic').load(function(){
+        $('.qrcode strong').text(' ');
+    });
+  });
+});     
+</script>
 
 
-<script src="/js/script.js"></script>
 
-  </div>
-</body>
+
+
+
+  </body>
 </html>
