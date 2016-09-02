@@ -5,49 +5,65 @@
   <meta charset="UTF-8">
   
     <title>Hexo</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="John Doe">
     
+
     
+    <meta name="description">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+<meta name="twitter:description">
+
     
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
     
     
     <link rel="icon" href="/img/favicon.ico">
     
     
-    <link rel="apple-touch-icon" href="/img/pacman.jpg">
-    <link rel="apple-touch-icon-precomposed" href="/img/pacman.jpg">
+    <link rel="apple-touch-icon" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
     
     <link rel="stylesheet" href="/css/style.css">
 </head>
 
   <body>
     <header>
-      <div>
+      
+<div>
 		
 			<div id="imglogo">
-				<a href="/"><img src="/img/pacman.svg" alt="Hexo" title="Hexo"/></a>
+				<a href="/"><img src="/img/logo.png" alt="Hexo" title="Hexo"/></a>
 			</div>
 			
 			<div id="textlogo">
 				<h1 class="site-name"><a href="/" title="Hexo">Hexo</a></h1>
 				<h2 class="blog-motto"></h2>
 			</div>
-			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
 			</a></div>
 			<nav class="animated">
 				<ul>
-					
+					<ul>
+					 
 						<li><a href="/">Home</a></li>
 					
 						<li><a href="/archives">Archives</a></li>
 					
-					<li>
+						<li><a href="/about">About</a></li>
 					
+					<li>
+ 					
 					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
 						<label>Search</label>
-						<input type="text" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
 						<input type="hidden" name="q" value="site:yoursite.com">
 					</form>
 					
@@ -55,73 +71,265 @@
 				</ul>
 			</nav>			
 </div>
-
     </header>
     <div id="container">
       <div id="main">
 
-  <section class="post" itemscope itemprop="blogPost">
-  
-    <a href="/2016/09/02/javaThread/" title="java多线程" itemprop="url">
-  
-    <h1 itemprop="name">java多线程</h1>
+   
     
-     
-           <p itemprop="description" >一、线程的创建与启动1.继承Thread类创建线程类1234567891011121314151617181920public class FirstThread extends Thread &amp;#123;	private int i;	public void run()&amp;#12</p>
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2016/09/02/javaThread/" title="java多线程" itemprop="url">java多线程</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="John Doe" target="_blank" itemprop="author">John Doe</a>
+		
+  <p class="article-time">
+    <time datetime="2016-09-02T14:12:18.000Z" itemprop="datePublished"> Published 2016-09-02</time>
+    
+  </p>
+</header>
+    <div class="article-content">
         
-    
-    <time datetime="2016-09-02T14:12:18.000Z" itemprop="datePublished">2016-09-02</time>
-  </a>
-</section>
+        <h2 id="一、线程的创建与启动"><a href="#一、线程的创建与启动" class="headerlink" title="一、线程的创建与启动"></a>一、线程的创建与启动</h2><h3 id="1-继承Thread类创建线程类"><a href="#1-继承Thread类创建线程类" class="headerlink" title="1.继承Thread类创建线程类"></a>1.继承Thread类创建线程类</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">public class FirstThread extends Thread &#123;</span><br><span class="line"></span><br><span class="line">	private int i;</span><br><span class="line">	public void run()&#123;</span><br><span class="line">		for(;i&lt;100;i++)&#123;</span><br><span class="line">			System.out.println(getName()+&quot; &quot; +i);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		// TODO Auto-generated method stub</span><br><span class="line">       for(int i=0;i&lt;100;i++)&#123;</span><br><span class="line">    	   System.out.println(Thread.currentThread().getName()+&quot; &quot;+i);</span><br><span class="line">    	   if(i==20)&#123;</span><br><span class="line">    		   new FirstThread().start();</span><br><span class="line">    		   new FirstThread().start();</span><br><span class="line">    	   &#125;</span><br><span class="line">       &#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="2-实现Runnable接口创建线程类"><a href="#2-实现Runnable接口创建线程类" class="headerlink" title="2.实现Runnable接口创建线程类"></a>2.实现Runnable接口创建线程类</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">public class SecondThread implements Runnable &#123;</span><br><span class="line"></span><br><span class="line">	private int i;</span><br><span class="line">	@Override</span><br><span class="line">	public void run() &#123;</span><br><span class="line">		for(;i&lt;100;i++)</span><br><span class="line">		// TODO Auto-generated method stub</span><br><span class="line">       System.out.println(Thread.currentThread().getName() + &quot; &quot; +i);</span><br><span class="line">	&#125;</span><br><span class="line">	public static void main(String[] args)&#123;</span><br><span class="line">		for(int i=0;i&lt;100;i++)&#123;</span><br><span class="line">			System.out.println(Thread.currentThread().getName() + &quot; &quot; +i);</span><br><span class="line">			if(i==20)&#123;</span><br><span class="line">				SecondThread st = new SecondThread();</span><br><span class="line">				new Thread(st,&quot;新线程1&quot;).start();</span><br><span class="line">				new Thread(st,&quot;新线程2&quot;).start();</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>注明：未必i==20线程就马上运行，或许是i=22时，因为线程还有个就绪状态。</p>
+<h2 id="二、使用Callable和Future创建线程"><a href="#二、使用Callable和Future创建线程" class="headerlink" title="二、使用Callable和Future创建线程"></a>二、使用Callable和Future创建线程</h2><p>call方法可以有返回值和抛出异常；<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">import java.util.concurrent.Callable;</span><br><span class="line">import java.util.concurrent.FutureTask;</span><br><span class="line"></span><br><span class="line">public class ThirdThread implements Callable&lt;Integer&gt; &#123;</span><br><span class="line"></span><br><span class="line">	@Override</span><br><span class="line">	public Integer call() throws Exception &#123;</span><br><span class="line">		// TODO Auto-generated method stub</span><br><span class="line">		int i=0;</span><br><span class="line">		for(;i&lt;100;i++)&#123;</span><br><span class="line">			System.out.println(Thread.currentThread().getName() + &quot; &quot; + i);</span><br><span class="line">		&#125;</span><br><span class="line">		return i;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	public static void main(String[] args)&#123;</span><br><span class="line">		ThirdThread st = new ThirdThread();</span><br><span class="line">		FutureTask&lt;Integer&gt; task = new FutureTask&lt;Integer&gt;(st);</span><br><span class="line">		for(int i=0;i&lt;100;i++)&#123;</span><br><span class="line">			System.out.println(Thread.currentThread().getName() + &quot; &quot; + i);</span><br><span class="line">			if(i==20)&#123;</span><br><span class="line">				new Thread(task,&quot;有返回值的线程&quot;).start();</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		try&#123;</span><br><span class="line">			System.out.println(&quot;子线程的返回值：&quot; + task.get());</span><br><span class="line">		&#125;catch(Exception e)&#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>推荐使用实现Runnable接口、Callable的方式创建多线程。</p>
+<h2 id="三、线程的生命周期"><a href="#三、线程的生命周期" class="headerlink" title="三、线程的生命周期"></a>三、线程的生命周期</h2><p> 新建和就绪，运行和阻塞，死亡<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">public class StartDead extends Thread&#123;</span><br><span class="line"></span><br><span class="line">	private int i;</span><br><span class="line">	public void run()&#123;</span><br><span class="line">		for(;i&lt;100;i++)&#123;</span><br><span class="line">			System.out.println(getName() + &quot; &quot;+ i);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		// TODO Auto-generated method stub</span><br><span class="line">         StartDead sd = new StartDead();</span><br><span class="line">         for(int i=0;i&lt;300;i++)&#123;</span><br><span class="line">        	 System.out.println(Thread.currentThread().getName() + &quot; &quot; + i);</span><br><span class="line">        	 if(i==20)&#123;</span><br><span class="line">        		 sd.start();</span><br><span class="line">        		 System.out.println(Thread.currentThread().getName() + &quot; &quot; + i);</span><br><span class="line">        	 &#125;</span><br><span class="line">        	 </span><br><span class="line">        	 if(i&gt;20&amp;&amp;!sd.isAlive())&#123;</span><br><span class="line">        		 sd.start();</span><br><span class="line">        	 &#125;</span><br><span class="line">         &#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>注明：这个会抛出异常，已经死亡的进程无法再启动</p>
+<h2 id="四、控制进程"><a href="#四、控制进程" class="headerlink" title="四、控制进程"></a>四、控制进程</h2><p>join线程：其他线程必须等到join线程完成<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">JoinThread jt = new JoinThread(&quot;name&quot;);</span><br><span class="line">jt.start();</span><br><span class="line">jt.join();</span><br></pre></td></tr></table></figure></p>
+<p>后台进程<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">DaemonThread t = new DaemonThread();</span><br><span class="line">//将此进程设为后台线程</span><br><span class="line">t.setDamen(true);</span><br><span class="line">t.start();</span><br></pre></td></tr></table></figure></p>
+<p>线程睡眠<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Thread.sleep(1000);</span><br></pre></td></tr></table></figure></p>
+<p>线程让步<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Thread.yield();</span><br></pre></td></tr></table></figure></p>
+<p>改变线程优先级<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">PriorityTest low = new PriortyTest(&quot;低级&quot;)；</span><br><span class="line">low.start();</span><br><span class="line">low.setPriority(Thread.MIN_PRIORITY);</span><br></pre></td></tr></table></figure></p>
+<h2 id="五、线程同步"><a href="#五、线程同步" class="headerlink" title="五、线程同步"></a>五、线程同步</h2><p>（1）背景：银行取款；<br>（2）前提：Account类和进程类<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">package com.example.drawMoney;</span><br><span class="line">public class Account &#123;</span><br><span class="line">	private String name;</span><br><span class="line">	private double balance;</span><br><span class="line">	public Account(String name, double balance) &#123;</span><br><span class="line">		super();</span><br><span class="line">		this.name = name;</span><br><span class="line">		this.balance = balance;</span><br><span class="line">	&#125;</span><br><span class="line">	public String getName() &#123;</span><br><span class="line">		return name;</span><br><span class="line">	&#125;</span><br><span class="line">	public void setName(String name) &#123;</span><br><span class="line">		this.name = name;</span><br><span class="line">	&#125;</span><br><span class="line">	public double getBalance() &#123;</span><br><span class="line">		return balance;</span><br><span class="line">	&#125;</span><br><span class="line">	public void setBalance(double balance) &#123;</span><br><span class="line">		this.balance = balance;</span><br><span class="line">	&#125;</span><br><span class="line">	@Override</span><br><span class="line">	public int hashCode() &#123;</span><br><span class="line">        return name.hashCode();</span><br><span class="line">	&#125;</span><br><span class="line">	@Override</span><br><span class="line">	public boolean equals(Object obj) &#123;</span><br><span class="line">		if (this == obj)</span><br><span class="line">			return true;</span><br><span class="line">        if (obj!=null&amp;&amp;obj.getClass()==Account.class)&#123;</span><br><span class="line">        	Account target = (Account)obj;</span><br><span class="line">        	return target.getName().equals(name);</span><br><span class="line">        &#125;</span><br><span class="line">        return false;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>（3）方法：<br>方法一：同步run代码块<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">package com.example.drawMoney;</span><br><span class="line"></span><br><span class="line">public class DrawThread extends Thread &#123;</span><br><span class="line"></span><br><span class="line">	private Account account;</span><br><span class="line">	private double drawAmount;</span><br><span class="line">	</span><br><span class="line">    public DrawThread(String name,Account account,double drawAmount)&#123;</span><br><span class="line">    	super(name);</span><br><span class="line">    	this.account = account;</span><br><span class="line">    	this.drawAmount = drawAmount;</span><br><span class="line">    &#125;	</span><br><span class="line">    </span><br><span class="line">    public void run()&#123;</span><br><span class="line">    	synchronized(account)&#123;</span><br><span class="line">        	if(account.getBalance()&gt;=drawAmount)&#123;</span><br><span class="line">        		System.out.println(Thread.currentThread().getName() + &quot;取走钱&quot; + drawAmount);</span><br><span class="line">        		try&#123;</span><br><span class="line">        			Thread.sleep(1);</span><br><span class="line">        		&#125;catch(Exception e)&#123;</span><br><span class="line">        			e.printStackTrace();</span><br><span class="line">        		&#125;</span><br><span class="line">        		account.setBalance(account.getBalance()-drawAmount);</span><br><span class="line">        		System.out.println(&quot;剩下&quot; + account.getBalance());</span><br><span class="line">        	&#125;</span><br><span class="line">        	else&#123;</span><br><span class="line">        		System.out.println(&quot;余额不足&quot;);</span><br><span class="line">        	&#125;</span><br><span class="line">    	&#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		// TODO Auto-generated method stub</span><br><span class="line">        Account account = new Account(&quot;我&quot;,1000);</span><br><span class="line">        new DrawThread(&quot;1&quot;,account,600).start();;</span><br><span class="line">        new DrawThread(&quot;2&quot;,account,600).start();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>方法二：同步Account中方法<br>给Account增加这样一个方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">public synchronized void drawMoney(double drawMoney)&#123;</span><br><span class="line">		if(balance&gt;= drawMoney)&#123;</span><br><span class="line">			System.out.println(&quot;取钱成功&quot;);</span><br><span class="line">			try&#123;</span><br><span class="line">				Thread.sleep(1);</span><br><span class="line">			&#125;catch(Exception e)&#123;</span><br><span class="line">				e.printStackTrace();</span><br><span class="line">			&#125;</span><br><span class="line">			balance -= drawMoney;</span><br><span class="line">			System.out.println(&quot;余额为：&quot;+ balance);</span><br><span class="line">		&#125;</span><br><span class="line">		else&#123;</span><br><span class="line">			System.out.println(&quot;取钱失败&quot;);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure></p>
+<p>同时在线程类中修改run方法如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public void run()&#123;</span><br><span class="line">    	account.drawMoney(drawAmount);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<p>方法三：释放同步监视器的锁定,使用同步锁（Lock）<br>修改Account属性及drawMoney方法如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">private final ReentrantLock lock = new ReentrantLock() </span><br><span class="line">public void drawMoney(double drawMoney)&#123;</span><br><span class="line">		lock.lock();</span><br><span class="line">		try&#123;</span><br><span class="line">			if(balance&gt;= drawMoney)&#123;</span><br><span class="line">				System.out.println(&quot;取钱成功&quot;);</span><br><span class="line">				try&#123;</span><br><span class="line">					Thread.sleep(1);</span><br><span class="line">				&#125;catch(Exception e)&#123;</span><br><span class="line">					e.printStackTrace();</span><br><span class="line">				&#125;</span><br><span class="line">				balance -= drawMoney;</span><br><span class="line">				System.out.println(&quot;余额为：&quot;+ balance);</span><br><span class="line">			&#125;</span><br><span class="line">			else&#123;</span><br><span class="line">				System.out.println(&quot;取钱失败&quot;);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;finally&#123;</span><br><span class="line">			lock.unlock();</span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure></p>
+<p>注：因为在该类中使用Lock对象时每个Lock对象对应一个Account对象，这样也能保证同一时刻只能有一个线程进入临界区。<br>（4）死锁</p>
+<h2 id="六、进程通信"><a href="#六、进程通信" class="headerlink" title="六、进程通信"></a>六、进程通信</h2><p>（1）背景：取钱和存钱同时交互进行着<br>（2）基本的Account类修改如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line">package com.example.drawMoney;</span><br><span class="line"></span><br><span class="line">public class Account &#123;</span><br><span class="line">	private String name;</span><br><span class="line">	private double balance;</span><br><span class="line">	private boolean flag = false;</span><br><span class="line">	</span><br><span class="line">	public Account(String name, double balance) &#123;</span><br><span class="line">		super();</span><br><span class="line">		this.name = name;</span><br><span class="line">		this.balance = balance;</span><br><span class="line">	&#125;</span><br><span class="line">	public String getName() &#123;</span><br><span class="line">		return name;</span><br><span class="line">	&#125;</span><br><span class="line">	public void setName(String name) &#123;</span><br><span class="line">		this.name = name;</span><br><span class="line">	&#125;</span><br><span class="line">	public double getBalance() &#123;</span><br><span class="line">		return balance;</span><br><span class="line">	&#125;</span><br><span class="line">	public void setBalance(double balance) &#123;</span><br><span class="line">		this.balance = balance;</span><br><span class="line">	&#125;</span><br><span class="line">	@Override</span><br><span class="line">	public int hashCode() &#123;</span><br><span class="line">        return name.hashCode();</span><br><span class="line">	&#125;</span><br><span class="line">	@Override</span><br><span class="line">	public boolean equals(Object obj) &#123;</span><br><span class="line">		if (this == obj)</span><br><span class="line">			return true;</span><br><span class="line">        if (obj!=null&amp;&amp;obj.getClass()==Account.class)&#123;</span><br><span class="line">        	Account target = (Account)obj;</span><br><span class="line">        	return target.getName().equals(name);</span><br><span class="line">        &#125;</span><br><span class="line">        return false;</span><br><span class="line">	&#125;</span><br><span class="line">public synchronized void drawMoney(double drawMoney)&#123;</span><br><span class="line">	try&#123;</span><br><span class="line">		if(!flag)&#123;</span><br><span class="line">			wait();</span><br><span class="line">		&#125;</span><br><span class="line">		else&#123;</span><br><span class="line">			System.out.println(Thread.currentThread().getName() + &quot;取钱&quot; + drawMoney);</span><br><span class="line">			balance -= drawMoney;</span><br><span class="line">			System.out.println(&quot;账户余额为：&quot; + balance);</span><br><span class="line">			flag = false;</span><br><span class="line">			notifyAll();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;catch(Exception e)&#123;</span><br><span class="line">		e.printStackTrace();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public synchronized void depositMoney(double depositMoney)&#123;</span><br><span class="line">	try&#123;</span><br><span class="line">		if(flag)&#123;</span><br><span class="line">			wait();</span><br><span class="line">		&#125;</span><br><span class="line">		else&#123;</span><br><span class="line">			System.out.println(Thread.currentThread().getName() + &quot;存钱&quot; + depositMoney);</span><br><span class="line">			balance += depositMoney;</span><br><span class="line">			System.out.println(&quot;账户余额为：&quot; + balance);</span><br><span class="line">			flag = true;</span><br><span class="line">			notifyAll();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;catch(Exception e)&#123;</span><br><span class="line">		e.printStackTrace();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>方法一：使用sychronized来控制方法体<br>DrawThread.java<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">package com.example.drawMoney;</span><br><span class="line"></span><br><span class="line">public class DrawThread extends Thread &#123;</span><br><span class="line"></span><br><span class="line">	private Account account;</span><br><span class="line">	private double drawAmount;</span><br><span class="line">	</span><br><span class="line">    public DrawThread(String name,Account account,double drawAmount)&#123;</span><br><span class="line">    	super(name);</span><br><span class="line">    	this.account = account;</span><br><span class="line">    	this.drawAmount = drawAmount;</span><br><span class="line">    &#125;	</span><br><span class="line">    public void run()&#123;</span><br><span class="line">    	for(int i=0;i&lt;100;i++)</span><br><span class="line">    	account.drawMoney(drawAmount);</span><br><span class="line">    &#125;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		// TODO Auto-generated method stub</span><br><span class="line">        Account account = new Account(&quot;我&quot;,1000);</span><br><span class="line">        new DrawThread(&quot;1&quot;,account,600).start();;</span><br><span class="line">        new DepositThread(&quot;2&quot;,account,600).start();</span><br><span class="line">        new DepositThread(&quot;3&quot;,account,600).start();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>DepositThread.java<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">package com.example.drawMoney;</span><br><span class="line"></span><br><span class="line">public class DepositThread extends Thread &#123;</span><br><span class="line">	private Account account;</span><br><span class="line">	private double depositMoney;</span><br><span class="line">	</span><br><span class="line">    public DepositThread(String name,Account account,double depositMoney)&#123;</span><br><span class="line">    	super(name);</span><br><span class="line">    	this.account = account;</span><br><span class="line">    	this.depositMoney = depositMoney;</span><br><span class="line">    &#125;	</span><br><span class="line">    </span><br><span class="line">    public void run()&#123;</span><br><span class="line">    	for(int i=0;i&lt;100;i++)</span><br><span class="line">    	account.depositMoney(depositMoney);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>方法二：使用同步锁Lock，同时使用Condition控制线程通信<br>修改Account属性及两个方法如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">private final Lock lock = new ReentrantLock();</span><br><span class="line">private final Condition cond = lock.newCondition();</span><br><span class="line"></span><br><span class="line">public void drawMoney(double drawMoney)&#123;</span><br><span class="line">lock.lock();</span><br><span class="line">	try&#123;</span><br><span class="line">		if(!flag)&#123;</span><br><span class="line">			cond.await();</span><br><span class="line">		&#125;</span><br><span class="line">		else&#123;</span><br><span class="line">			System.out.println(Thread.currentThread().getName() + &quot;取钱&quot; + drawMoney);</span><br><span class="line">			balance -= drawMoney;</span><br><span class="line">			System.out.println(&quot;账户余额为：&quot; + balance);</span><br><span class="line">			flag = false;</span><br><span class="line">			cond.signalAll();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;catch(Exception e)&#123;</span><br><span class="line">		e.printStackTrace();</span><br><span class="line">	&#125;finally&#123;</span><br><span class="line">	lock.unlock();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public void depositMoney(double depositMoney)&#123;</span><br><span class="line">	try&#123;</span><br><span class="line">		if(flag)&#123;</span><br><span class="line">			cond.await();</span><br><span class="line">		&#125;</span><br><span class="line">		else&#123;</span><br><span class="line">			System.out.println(Thread.currentThread().getName() + &quot;存钱&quot; + depositMoney);</span><br><span class="line">			balance += depositMoney;</span><br><span class="line">			System.out.println(&quot;账户余额为：&quot; + balance);</span><br><span class="line">			flag = true;</span><br><span class="line">			cond.signalAll();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;catch(Exception e)&#123;</span><br><span class="line">		e.printStackTrace();</span><br><span class="line">	&#125;finally&#123;</span><br><span class="line">	lock.unlock();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>方法三：使用阻塞队列BlockingQueue控制线程通信</p>
+<h2 id="七、其他"><a href="#七、其他" class="headerlink" title="七、其他"></a>七、其他</h2><p>（1）线程组和未处理的异常<br>（2）线程池<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">package com.example.drawMoney;</span><br><span class="line"></span><br><span class="line">import java.util.concurrent.ExecutorService;</span><br><span class="line">import java.util.concurrent.Executors;</span><br><span class="line"></span><br><span class="line">public class Exector &#123;</span><br><span class="line"></span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		// TODO Auto-generated method stub</span><br><span class="line">     ExecutorService pool = Executors.newFixedThreadPool(6);</span><br><span class="line">     pool.submit(new MyThread());</span><br><span class="line">     pool.submit(new MyThread());</span><br><span class="line">     pool.shutdown();</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line">class MyThread implements Runnable&#123;</span><br><span class="line">	public void run()&#123;</span><br><span class="line">		for(int i=0;i&lt;100;i++)&#123;</span><br><span class="line">			System.out.println(Thread.currentThread().getName() + &quot; &quot; + i);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="八、-最后，总结："><a href="#八、-最后，总结：" class="headerlink" title="八、 最后，总结："></a>八、 最后，总结：</h2><ul>
+<li>进程有继承Thread，实现Runnable和Callable等接口三种方式；当然也可以使用线程池的方式；</li>
+<li>线程生命周期有四种类型；</li>
+<li>线程控制与线程通信有联系，二者均可以使用synchronized和ReentrantLock两种方式，线程通信注意flag标记以及相应的线程信息，比如wait（），notifyAll（）等。</li>
+</ul>
 
-  <section class="post" itemscope itemprop="blogPost">
-  
-    <a href="/2016/05/30/hexoUsing/" title="ubuntu平台下，使用hexo搭建github博客" itemprop="url">
-  
-    <h1 itemprop="name">ubuntu平台下，使用hexo搭建github博客</h1>
-    
-     
-           <p itemprop="description" >基本步骤写博文前的准备工作
-安装nodejs,hexo;
-启动hexo服务器;
-hexo总结
-
-（１）按照官网上的方法：[Ubuntu下安装nodejs][1]（２）通过npm安装：hexosudo npm install hexo -g注：-g是指全局安装hexo（３）初始化一</p>
         
-    
-    <time datetime="2016-05-30T10:23:27.000Z" itemprop="datePublished">2016-05-30</time>
-  </a>
-</section>
-
-  <section class="post" itemscope itemprop="blogPost">
-  
-    <a href="/2016/05/13/hello/" title="android与后台数据交互（后台基于java）" itemprop="url">
-  
-    <h1 itemprop="name">android与后台数据交互（后台基于java）</h1>
-    
-     
-           <p itemprop="description" >版权所有，转载请注明出处，翻版必究。*交互起android与后台的数据交互与web前后端数据十分相似。主要体现如下：（1）基本步骤是：开启服务器–&amp;gt;开启服务器–&amp;gt;开启前端；（2）基本数据流是：前台发给后台的URL格式为：服务器地址/参数=参数值—&amp;gt;后台接收数据后</p>
         
-    
-    <time datetime="2016-05-12T16:08:48.000Z" itemprop="datePublished">2016-05-13</time>
-  </a>
-</section>
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
 
 
 </div>
-      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+
+
+
+<div class="comments-count">
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2016/05/30/hexoUsing/" title="ubuntu平台下，使用hexo搭建github博客" itemprop="url">ubuntu平台下，使用hexo搭建github博客</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="John Doe" target="_blank" itemprop="author">John Doe</a>
+		
+  <p class="article-time">
+    <time datetime="2016-05-30T10:23:27.000Z" itemprop="datePublished"> Published 2016-05-30</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h2 id="基本步骤"><a href="#基本步骤" class="headerlink" title="基本步骤"></a>基本步骤</h2><h3 id="写博文前的准备工作"><a href="#写博文前的准备工作" class="headerlink" title="写博文前的准备工作"></a>写博文前的准备工作</h3><ul>
+<li>安装nodejs,hexo;</li>
+<li>启动hexo服务器;</li>
+<li>hexo总结</li>
+</ul>
+<p>（１）按照官网上的方法：[Ubuntu下安装nodejs][1]<br>（２）通过npm安装：hexo<br><code>sudo npm install hexo -g</code><br>注：-g是指全局安装hexo<br>（３）初始化一个blog 并且启动服务器：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo init blog</span><br><span class="line">cd blog</span><br><span class="line">npm install</span><br><span class="line">hexo server//启动服务器</span><br></pre></td></tr></table></figure></p>
+<p>此时文件目录为</p>
+<pre><code>blog
+    _config_yml // 注配置文件
+    db.json // 数据
+    debug.log // 调试日志
+    _node_mudules // nodejs 相关依赖
+    package.json // 配置依赖
+    scaffolds // 脚手架 - 也就是一个工具模板
+    source // 存放blog正文的地方
+    themes // 存放皮肤的地方
+</code></pre><p>默认访问 <a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a></p>
+<h2 id="写博文"><a href="#写博文" class="headerlink" title="写博文"></a>写博文</h2><p>（１）新建文章(在blog文件夹下)<br>新建一篇主题为hello的blog：<code>hexo new hello</code><br>（２）编辑 hello.md 就是编辑你的blog内容（hexo会在 source/_posts/ 下新建hello.md 文件）<br>（３）静态处理：因为我们的blog要部署到github静态服务器上面，所有我们还要将页面进行静态化<code>hexo g</code>（blog根目录下会生成public文件夹）<br>（４）修改blog目录下的 _config.yml 文件,打开 _config.yml 找到如下配置<br><code>deploy:
+     type: git
+     repo:https://github.com/leopardpan/leopardpan.github.io.git</code><br>注：hexo3.0以后的这里可能会报<br><figure class="highlight plain"><figcaption><span>Deployer not found: git```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">这时这样解决:运行</span><br><span class="line">`npm install hexo-deployer-git--save`,</span><br><span class="line">之后在`hexo g` `hexo d`;</span><br><span class="line">打开你的github网址，也就是http://×××.github.io/,即可以看到效果。</span><br><span class="line">（５）任意的事情</span><br><span class="line">主站设置：打开 _config.yml,修改配置</span><br></pre></td></tr></table></figure></p>
+<p>title: zccoder<br>subtitle: 专注于Android、Java、移动互联网、项目管理、软件架构<br>description:<br>author: zccoder<br>language: zh-CN<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">## hexo总结</span><br><span class="line">（１）一般命令</span><br></pre></td></tr></table></figure></p>
+<p>hexo new”postName” #新建文章<br>hexo new page”pageName” #新建页面<br>hexo generate #生成静态页面至public目录<br>hexo server #开启预览访问端口（默认端口4000，’ctrl + c’关闭server）<br>hexo deploy #将.deploy目录部署到GitHub<br>hexo help # 查看帮助<br>hexo version #查看Hexo的版本<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">（２）总结，每次部署的步骤，可按以下三步来进行。</span><br></pre></td></tr></table></figure></p>
+<p>hexo clean<br>hexo generate<br>hexo deploy<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">（３）复合命令</span><br></pre></td></tr></table></figure></p>
+<p>hexo deploy -g  #生成加部署<br>hexo server -g  #生成加预览<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">命令的简写为：</span><br></pre></td></tr></table></figure></p>
+<p>hexo n == hexo new<br>hexo g == hexo generate<br>hexo s == hexo server<br>hexo d == hexo deploy<br>```</p>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2016/05/13/hello/" title="android与后台数据交互（后台基于java）" itemprop="url">android与后台数据交互（后台基于java）</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="John Doe" target="_blank" itemprop="author">John Doe</a>
+		
+  <p class="article-time">
+    <time datetime="2016-05-12T16:08:48.000Z" itemprop="datePublished"> Published 2016-05-13</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <p>版权所有，转载请注明出处，翻版必究。<br>*交互起android与后台的数据交互与web前后端数据十分相似。<br>主要体现如下：<br>（1）基本步骤是：开启服务器–&gt;开启服务器–&gt;开启前端；<br>（2）基本数据流是：前台发给后台的URL格式为：服务器地址/参数=参数值—&gt;后台接收数据后，与数据库交互，处理后返回结果–&gt;前端根据返回结果值进行相应处理;</p>
+<p>*最大的不同如下：<br>（1）数据流传输的格式是使用接送数据；<br>（2）必须得封装这个数据流，<br>前端封装成的类是：HelpClient；<br>后台封装成的类是：Controller;</p>
+<p>具体步骤如下：<br>（1）前端：HttpUtil网络传输封装json类（完全不改动）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">//调用到org.json.jar</span><br><span class="line">public class HttpUtil &#123;</span><br><span class="line">	public static String getHttpJSON(String url) &#123;</span><br><span class="line"></span><br><span class="line">		HttpGet httpRequest = new HttpGet(url);</span><br><span class="line">		try &#123;</span><br><span class="line">			HttpClient httpclient = new DefaultHttpClient();</span><br><span class="line">			HttpResponse httpResponse = httpclient.execute(httpRequest);</span><br><span class="line"></span><br><span class="line">			if (httpResponse.getStatusLine().getStatusCode() == HttpStatus.SC_OK) &#123;</span><br><span class="line">				HttpEntity httpEntity=httpResponse.getEntity();</span><br><span class="line">				Log.e(&quot;HTTPENTITY&quot;, httpEntity.toString());</span><br><span class="line">				String jsonStr = EntityUtils.toString(httpEntity,</span><br><span class="line">						&quot;UTF-8&quot;);</span><br><span class="line">				Log.e(&quot;JSONSTR&quot;, jsonStr);</span><br><span class="line">				return jsonStr;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125; catch (Exception e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">		return null;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public static int getHttpStatus() &#123;</span><br><span class="line">		int status = 0;</span><br><span class="line">		HttpGet httpRequest = new HttpGet(</span><br><span class="line">				&quot;http://192.168.0.214/vote/AndroidConnServlet&quot;);</span><br><span class="line">				</span><br><span class="line">		try &#123;</span><br><span class="line">			HttpParams httpParameters = new BasicHttpParams();</span><br><span class="line">			HttpConnectionParams.setConnectionTimeout(httpParameters, 5000);</span><br><span class="line">			HttpConnectionParams.setSoTimeout(httpParameters, 5000);</span><br><span class="line">			HttpConnectionParams.setTcpNoDelay(httpParameters, true);</span><br><span class="line"></span><br><span class="line">			HttpClient httpclient = new DefaultHttpClient(httpParameters);</span><br><span class="line">			HttpResponse httpResponse = httpclient.execute(httpRequest);</span><br><span class="line"></span><br><span class="line">			status = httpResponse.getStatusLine().getStatusCode();</span><br><span class="line">		&#125; catch (Exception e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">		return status;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>（2）前端：封装成HelpClient类（只需根据实际情况改动BASE_URL）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">package com.example.util;</span><br><span class="line"></span><br><span class="line">import com.loopj.android.http.*;</span><br><span class="line"></span><br><span class="line">public class HelpClient &#123;</span><br><span class="line">//该地址即为前端往后台发送的地址：http://服务器端ip地址/服务端工程名/</span><br><span class="line">	private static final String BASE_URL = &quot;http://10.140.24.211:8080/Help_SV1/&quot;;</span><br><span class="line">	private static AsyncHttpClient client = new AsyncHttpClient();</span><br><span class="line"></span><br><span class="line">	public static void get(String url, RequestParams params,</span><br><span class="line">			AsyncHttpResponseHandler responseHandler) &#123;</span><br><span class="line">		client.get(getAbsoluteUrl(url), params, responseHandler);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public static void post(String url, RequestParams params,</span><br><span class="line">			AsyncHttpResponseHandler responseHandler) &#123;</span><br><span class="line">		client.post(getAbsoluteUrl(url), params, responseHandler);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	private static String getAbsoluteUrl(String relativeUrl) &#123;</span><br><span class="line">		return BASE_URL + relativeUrl;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>（3）在android端：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line">public class MainActivity extends Activity &#123;</span><br><span class="line"></span><br><span class="line">	private EditText name;</span><br><span class="line">	private EditText pw;</span><br><span class="line"></span><br><span class="line">	@Override</span><br><span class="line">	protected void onCreate(Bundle savedInstanceState) &#123;</span><br><span class="line">		super.onCreate(savedInstanceState);</span><br><span class="line">		setContentView(R.layout.activity_main);</span><br><span class="line">		// solve network</span><br><span class="line">		/*</span><br><span class="line">		 * StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder()</span><br><span class="line">		 * .detectDiskReads().detectDiskWrites().detectNetwork()</span><br><span class="line">		 * .penaltyLog().build()); StrictMode.setVmPolicy(new</span><br><span class="line">		 * StrictMode.VmPolicy.Builder()</span><br><span class="line">		 * .detectLeakedSqlLiteObjects().detectLeakedClosableObjects()</span><br><span class="line">		 * .penaltyLog().penaltyDeath().build());</span><br><span class="line">		 */</span><br><span class="line">		/* getActionBar().hide(); */</span><br><span class="line">		name = (EditText) findViewById(R.id.editText1);</span><br><span class="line">		pw = (EditText) findViewById(R.id.editText2);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">public void onLogInClick(View v) &#123;</span><br><span class="line">	final String username = name.getText().toString();</span><br><span class="line">	final String password = pw.getText().toString();</span><br><span class="line">	//Controller是后台继承于HttpServlet的类</span><br><span class="line">	String URL = &quot;Controller&quot;;</span><br><span class="line">	//按照对既定参数进行赋值来实现数据传输</span><br><span class="line">	String getUrl = URL + &quot;?ACTION=&quot;+ &quot;LOGIN&quot; + &quot;&amp;&quot; + &quot;NAME=&quot; + username + &quot;&amp;&quot; + &quot;PASS=&quot; + password;</span><br><span class="line">	//</span><br><span class="line">	HelpClient.get(getUrl, null, new TextHttpResponseHandler() &#123;</span><br><span class="line">	//</span><br><span class="line">		@Override</span><br><span class="line">		public void onFailure(int statusCode, Header[] headers,</span><br><span class="line">				String responseBody, Throwable e) &#123;</span><br><span class="line">			// TODO Auto-generated method stub</span><br><span class="line">			Toast.makeText(getApplicationContext(), &quot;NetWork is not good&quot;,</span><br><span class="line">					Toast.LENGTH_SHORT).show();</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		@Override</span><br><span class="line">		public void onSuccess(int statusCode, Header[] headers,</span><br><span class="line">				String responseBody) &#123;</span><br><span class="line">			// TODO Auto-generated method stub</span><br><span class="line">			if (responseBody.equals(&quot;success&quot;)) &#123;</span><br><span class="line">				Toast.makeText(getApplicationContext(), responseBody,</span><br><span class="line">						Toast.LENGTH_SHORT).show();</span><br><span class="line">				Intent intent = new Intent();</span><br><span class="line">				intent.setClass(MainActivity.this,</span><br><span class="line">						HelpMessageActivity.class);</span><br><span class="line">				intent.putExtra(&quot;userid&quot;, username);</span><br><span class="line">				intent.putExtra(&quot;pwd&quot;, password);</span><br><span class="line"></span><br><span class="line">				startActivity(intent);</span><br><span class="line">			&#125; else &#123;</span><br><span class="line">				Toast.makeText(getApplicationContext(), &quot;login failed&quot;,</span><br><span class="line">						Toast.LENGTH_SHORT).show();</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>（4）后台：继承于HttpServlet的网络数据传输类<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">public class Controller extends HttpServlet &#123;</span><br><span class="line">	private static final long serialVersionUID = 1L;</span><br><span class="line"></span><br><span class="line">	/**</span><br><span class="line">	 * @see HttpServlet#HttpServlet()</span><br><span class="line">	 */</span><br><span class="line">	public Controller() &#123;</span><br><span class="line">		super();</span><br><span class="line">		// TODO Auto-generated constructor stub</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	/**</span><br><span class="line">	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse</span><br><span class="line">	 *      response)</span><br><span class="line">	 */</span><br><span class="line">	protected void doGet(HttpServletRequest request,</span><br><span class="line">			HttpServletResponse response) throws ServletException, IOException &#123;</span><br><span class="line">		// TODO Auto-generated method stub</span><br><span class="line">		//ACTION，NAME,PASS均是参数名称，获取的参数值是由前端传过来</span><br><span class="line">		String action = request.getParameter(&quot;ACTION&quot;);</span><br><span class="line">		if (action.equals(&quot;LOGIN&quot;)) &#123;</span><br><span class="line">			LoginDao loginDao = new LoginDao();</span><br><span class="line">			loginDao.init();</span><br><span class="line">			String userName = request.getParameter(&quot;NAME&quot;);</span><br><span class="line">			String passWord = request.getParameter(&quot;PASS&quot;);</span><br><span class="line"></span><br><span class="line">			PrintWriter out = response.getWriter();</span><br><span class="line">			//返回success与fail在loginDao方法中得写明，另外这两个参数是前端进行处理的关键</span><br><span class="line">			if (loginDao.query(userName, passWord)) &#123;</span><br><span class="line">			</span><br><span class="line">				out.print(&quot;success&quot;);</span><br><span class="line">			&#125; else &#123;</span><br><span class="line">				out.print(&quot;fail&quot;);</span><br><span class="line">			&#125;</span><br><span class="line">			out.flush();</span><br><span class="line">			out.close();</span><br><span class="line">		&#125;</span><br><span class="line">		if (action.equals(&quot;SUB&quot;)) &#123;</span><br><span class="line">   ****</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	/**</span><br><span class="line">	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse</span><br><span class="line">	 *      response)</span><br><span class="line">	 */</span><br><span class="line">	protected void doPost(HttpServletRequest request,</span><br><span class="line">			HttpServletResponse response) throws ServletException, IOException &#123;</span><br><span class="line">		// TODO Auto-generated method stub</span><br><span class="line">		this.doGet(request, response);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>（5）其他相关问题说明：<br>1、后台服务器编程环境（IDE）的选择<br>通用选择是JavaEE，或者MyEclipse。具体新建服务器项目看网上教学。<br>2、测试环境<br>本地环境测试时，会运行三款软件：数据库，后台服务器，前端服务器。<br>3、小技巧与注意事项：<br>本地测试时<br>（1）可以在命令行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">使用其中的“当前的IPV4地址”作为前端的BASE_URL中的ip地址；</span><br><span class="line">（2）可以使用</span><br><span class="line">```http://192.168.1.114:8080/Help_SV1//Controller?ACTION=LOGIN&amp;NAME=2&amp;PASS=1</span><br></pre></td></tr></table></figure></p>
+<p>类似这样的地址直接在浏览器中输入，而不用每回打开android虚拟机或者实体机来测试数据在前后端之间的交互结果是否正确。</p>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+
+</div>
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
 
 <div id="asidepart">
-<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
 <aside class="clearfix">
 
   
 
+
   
 
-  <div class="rsspart">
-	<a href="null" target="_blank" title="rss">RSS 订阅</a>
+  
+
+  <div class="linkslist">
+  <p class="asidetitle">Links</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="https://coderq.com" target="_blank" title="一个面向程序员交流分享的新一代社区">码农圈</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://wuchong.me" target="_blank" title="Jark&#39;s Blog">Jark&#39;s Blog</a>
+            
+          </li>
+        
+    </ul>
 </div>
+
+  
+
+
+  <div class="rsspart">
+	<a href="/atom.xml" target="_blank" title="rss">RSS</a>
+</div>
+
+  <div class="weiboshow">
+  <p class="asidetitle">Weibo</p>
+    <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=null&verifier=b3593ceb&dpc=1"></iframe>
+</div>
+
 
 </aside>
 </div>
@@ -134,21 +342,42 @@ hexo总结
 	</div>
 	
 	
-	<div class="social-font clearfix">
+	<section class="info">
+		<p> Hello ,I&#39;m Larry Page in Google. <br/>
+			This is my blog,believe it or not.</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		<a href="http://weibo.com/2176287895" target="_blank" class="icon-weibo" title="微博"></a>
+		
+		
+		
+		
+		
 		
 		
 		
 		
 		
 	</div>
-		<p class="copyright">Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/A-limon/pacman" target="_blank" title="Pacman">Pacman</a> © 2016 
+			
 		
-		<a href="http://yoursite.com" target="_blank" title="John Doe">John Doe</a>
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2016 
+		
+		<a href="/about" target="_blank" title="John Doe">John Doe</a>
+		
 		
 		</p>
 </div>
 </footer>
-    <script src="/js/jquery-2.1.0.min.js"></script>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
 <script type="text/javascript">
 $(document).ready(function(){ 
   $('.navbar').click(function(){
@@ -166,18 +395,6 @@ $(document).ready(function(){
       a = $('#asidepart'),
       c = $('.closeaside'),
       o = $('.openaside');
-  $(window).resize(function(){
-    getSize(); 
-    if (myWidth >= 1024) {
-      $('header nav').removeClass('shownav');
-    }else
-    {
-      m.removeClass('moveMain');
-      a.css('display', 'block').removeClass('fadeOut');
-      o.css('display', 'none');
-        
-    }
-  });
   c.click(function(){
     a.addClass('fadeOut').css('display', 'none');
     o.css('display', 'block').addClass('fadeIn');
@@ -191,6 +408,18 @@ $(document).ready(function(){
   $(window).scroll(function(){
     o.css("top",Math.max(80,260-$(this).scrollTop()));
   });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+        
+    }
+  });
 });
 </script>
 
@@ -199,6 +428,69 @@ $(document).ready(function(){
 
 
 
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e6d1f421bbc9962127a50488f9ed37d1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
 
   </body>
  </html>
